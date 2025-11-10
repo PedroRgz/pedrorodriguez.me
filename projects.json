@@ -1,0 +1,130 @@
+[
+  {
+    "id": "feat-episcopio",
+    "title": "Episcopio — Social Media Analytics MVP",
+    "description": "Pipeline y API para analítica de redes sociales; enfoque en despliegue vía Azure ACR y App Service.",
+    "year": "2025",
+    "urls": {
+      "code": "https://github.com/PedroRgz/Episcopio",
+      "demo": null,
+      "notebook": null
+    },
+    "area": "programacion",
+    "tags": [
+      "python",
+      "api",
+      "azure",
+      "docker"
+    ],
+    "featured": true
+  },
+  {
+    "id": "feat-spacex-dashboard",
+    "title": "SpaceX Launch Records Dashboard",
+    "description": "Dashboard interactivo con Plotly/Dash para analizar lanzamientos y tasas de éxito.",
+    "year": "2025",
+    "urls": {
+      "code": "https://github.com/PedroRgz/CareerAcademy-IBM-DS-RocketLaunchesDashboard",
+      "demo": null,
+      "notebook": null
+    },
+    "area": "ciencia-de-datos",
+    "tags": [
+      "python",
+      "dash",
+      "plotly"
+    ],
+    "featured": true
+  },
+  {
+    "id": "feat-spacex-ml",
+    "title": "SpaceX Analysis & ML Insights",
+    "description": "Proyecto de ciencia de datos con notebooks: EDA, ML, mapas interactivos y pipeline de predicción.",
+    "year": "2025",
+    "urls": {
+      "code": "https://github.com/PedroRgz/CareerAcademy-IBM-DS-RocketLaunchesAnalysis",
+      "demo": null,
+      "notebook": "https://github.com/PedroRgz/CareerAcademy-IBM-DS-RocketLaunchesAnalysis/tree/main/notebooks"
+    },
+    "area": "ciencia-de-datos",
+    "tags": [
+      "python",
+      "ml",
+      "folium",
+      "sqlite"
+    ],
+    "featured": true
+  },
+  {
+    "id": "feat-missing",
+    "title": "Curso — Manejo de Datos Faltantes",
+    "description": "Exploración práctica de técnicas para datos faltantes en pandas y notebooks reproducibles.",
+    "year": "2024",
+    "urls": {
+      "code": "https://github.com/PedroRgz/Curso-Manejo-de-datos-faltantes",
+      "demo": null,
+      "notebook": "https://github.com/PedroRgz/Curso-Manejo-de-datos-faltantes"
+    },
+    "area": "notebooks",
+    "tags": [
+      "python",
+      "pandas",
+      "missing-data"
+    ],
+    "featured": true
+  },
+  {
+    "id": "feat-ios-ar",
+    "title": "Earth iOS AR (Swift)",
+    "description": "Aplicación de ejemplo con realidad aumentada en iOS.",
+    "year": "2025",
+    "urls": {
+      "code": "https://github.com/PedroRgz/Earth-iOS-AR",
+      "demo": null,
+      "notebook": null
+    },
+    "area": "ios",
+    "tags": [
+      "swift",
+      "arkit",
+      "ios"
+    ],
+    "featured": true
+  },
+  {
+    "id": "feat-watch-notes",
+    "title": "Notes App — Apple Watch",
+    "description": "App para crear y gestionar notas desde el Apple Watch (Swift).",
+    "year": "2025",
+    "urls": {
+      "code": "https://github.com/PedroRgz/NotesApp_AppleWatch",
+      "demo": null,
+      "notebook": null
+    },
+    "area": "ios",
+    "tags": [
+      "swift",
+      "watchos",
+      "xcode"
+    ],
+    "featured": true
+  },
+  {
+    "id": "feat-breast-cancer-cuba",
+    "title": "Risk Factors — Breast Cancer (Cuban Population)",
+    "description": "Análisis de factores de riesgo en población cubana (proyecto académico).",
+    "year": "2024",
+    "urls": {
+      "code": "https://github.com/PedroRgz/Risk-Factors-for-breast-cancer-in-cuban-population",
+      "demo": null,
+      "notebook": null
+    },
+    "area": "ciencia-de-datos",
+    "tags": [
+      "python",
+      "epidemiologia",
+      "salud"
+    ],
+    "featured": false
+  }
+]

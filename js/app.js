@@ -217,7 +217,7 @@ function initActiveNavLinks() {
     if (visibleEntries.length > 0) {
       // Pick the entry with the highest intersection ratio
       const mostVisible = visibleEntries.reduce((max, entry) => 
-        entry.intersectionRatio > max.intersectionRatio ? entry : max, visibleEntries[0]);
+        entry.intersectionRatio > max.intersectionRatio ? entry : max);
       const targetId = mostVisible.target.id;
       navLinks.forEach(link => {
         if (link.dataset.section === targetId) {

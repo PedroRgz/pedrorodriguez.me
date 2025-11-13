@@ -61,7 +61,6 @@ function renderTimeline() {
     const card = document.createElement('div');
     card.className = 'timeline-card';
     setTimeout(() => card.classList.add('visible'), index * 150);
-    card.dataset.timelineId = item.id;
 
     card.innerHTML = `
       <h3 class="timeline-title">${item.title}</h3>
@@ -213,20 +212,24 @@ function initActiveNavLinks() {
   if (!sections.length) return;
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const targetId = entry.target.id;
-        navLinks.forEach(link => {
-          if (link.dataset.section === targetId) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
-      }
-    });
+    // Find all intersecting entries
+    const visibleEntries = entries.filter(entry => entry.isIntersecting);
+    if (visibleEntries.length > 0) {
+      // Pick the entry with the highest intersection ratio
+      const mostVisible = visibleEntries.reduce((max, entry) => 
+        entry.intersectionRatio > max.intersectionRatio ? entry : max);
+      const targetId = mostVisible.target.id;
+      navLinks.forEach(link => {
+        if (link.dataset.section === targetId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
   }, {
-    threshold: 0.5
+    threshold: 0.2,
+    rootMargin: '0px 0px -20% 0px'
   });
 
   sections.forEach(section => observer.observe(section));

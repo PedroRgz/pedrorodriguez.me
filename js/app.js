@@ -144,7 +144,7 @@ function initMobileMenu() {
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', !isExpanded);
+      hamburger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
     });
@@ -164,20 +164,20 @@ function initMobileMenu() {
 function initHeaderScroll() {
   let ticking = false;
   function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const header = document.getElementById('header');
-        if (header) {
-          if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-          } else {
-            header.classList.remove('scrolled');
-          }
+    if (ticking) return;
+    
+    ticking = true;
+    window.requestAnimationFrame(() => {
+      const header = document.getElementById('header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
         }
-        ticking = false;
-      });
-      ticking = true;
-    }
+      }
+      ticking = false;
+    });
   }
   window.addEventListener('scroll', onScroll);
 }

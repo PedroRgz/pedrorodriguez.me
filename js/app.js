@@ -54,16 +54,16 @@ function renderProjects(filter = 'destacados') {
 function renderTimeline() {
   const timelineEl = document.getElementById('timeline');
   if (!timelineEl) return;
-  
+
   timelineEl.innerHTML = '';
-  
+
   timeline.forEach((item, index) => {
     const card = document.createElement('div');
     card.className = 'timeline-card';
     setTimeout(() => card.classList.add('visible'), index * 150);
-    
+    card.dataset.timelineId = item.id;
+
     card.innerHTML = `
-      <span class="timeline-year">${item.year}</span>
       <h3 class="timeline-title">${item.title}</h3>
       <p class="timeline-subtitle">${item.subtitle}</p>
       <p class="timeline-description">${item.description}</p>
@@ -139,22 +139,22 @@ function initTimelineNavigation() {
 // ========== MENU HAMBURGUESA ==========
 function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  const navMenu = document.getElementById('navMenu');
 
-  if (hamburger && navLinks) {
+  if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
       const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
       hamburger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
       hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
+      navMenu.classList.toggle('active');
     });
 
     // Cerrar menú al hacer clic en enlace
-    document.querySelectorAll('.nav-link').forEach(link => {
+    navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.setAttribute('aria-expanded', 'false');
         hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
+        navMenu.classList.remove('active');
       });
     });
   }
@@ -200,6 +200,38 @@ function initSectionObserver() {
   sections.forEach(section => sectionObserver.observe(section));
 }
 
+// ========== RESALTAR ENLACES DEL MENÚ SEGÚN LA SECCIÓN ==========
+function initActiveNavLinks() {
+  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  if (!navLinks.length) return;
+
+  const sectionIds = Array.from(navLinks).map(link => link.dataset.section);
+  const sections = sectionIds
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const targetId = entry.target.id;
+        navLinks.forEach(link => {
+          if (link.dataset.section === targetId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  sections.forEach(section => observer.observe(section));
+}
+
 // ========== INICIALIZACIÓN PRINCIPAL ==========
 document.addEventListener('DOMContentLoaded', () => {
   // Renderizar contenido
@@ -213,4 +245,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initHeaderScroll();
   initSectionObserver();
+  initActiveNavLinks();
 });

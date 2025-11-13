@@ -87,35 +87,35 @@ const projects = [
 // ========== EXPERIENCIA Y FORMACIÓN ==========
 const timeline = [
   {
-    year: "2024",
+    id: 1,
     title: "Data Scientist",
     subtitle: "Proyecto Independiente",
     description: "Desarrollo de modelos de ML para análisis predictivo en salud. Implementación de pipelines en Azure Cloud y despliegue de soluciones escalables.",
     tags: ["Machine Learning", "Azure", "Python"]
   },
   {
-    year: "2023-2024",
+    id: 2,
     title: "Certificación IBM Data Science",
     subtitle: "Career Academy",
     description: "Programa completo de ciencia de datos incluyendo Python, ML, análisis estadístico y visualización de datos.",
     tags: ["Python", "ML", "Data Analysis"]
   },
   {
-    year: "2023",
+    id: 3,
     title: "Desarrollo iOS",
     subtitle: "Freelance",
     description: "Desarrollo de aplicaciones móviles enfocadas en salud digital y bienestar utilizando Swift y SwiftUI.",
     tags: ["Swift", "SwiftUI", "HealthKit"]
   },
   {
-    year: "2020-2023",
+    id: 4,
     title: "Médico Cirujano",
     subtitle: "Práctica Clínica",
     description: "Atención médica integral, diagnóstico y tratamiento. Experiencia en urgencias y medicina general.",
     tags: ["Medicina", "Diagnóstico", "Urgencias"]
   },
   {
-    year: "2014-2020",
+    id: 5,
     title: "Licenciatura en Medicina",
     subtitle: "Universidad",
     description: "Formación médica completa con énfasis en medicina basada en evidencia y pensamiento crítico.",

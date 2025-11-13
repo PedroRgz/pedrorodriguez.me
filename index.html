@@ -1,171 +1,234 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pedro Rodriguez — Médico y Desarrollador</title>
-  <meta name="description" content="Portafolio de Pedro Rodriguez: médico cirujano y desarrollador de software enfocado en ciencia de datos, ML y salud." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <meta property="og:title" content="Pedro Rodriguez — Portafolio" />
-  <meta property="og:description" content="Médico y desarrollador. Ciencia de datos, ML, salud digital." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pedrorgz.github.io" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedro Rodriguez — Médico Cirujano & Data Scientist</title>
+  <meta name="description" content="Pedro Rodriguez — Médico Cirujano y Data Scientist. Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles.">
+  <meta property="og:title" content="Pedro Rodriguez — Médico Cirujano & Data Scientist">
+  <meta property="og:description" content="Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pedrorgz.com/">
+  <meta property="og:image" content="https://pedrorgz.com/assets/favicon.svg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Pedro Rodriguez",
-    "jobTitle": "Médico Cirujano | Desarrollador de Software",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mérida",
-      "addressRegion": "Yucatán",
-      "addressCountry": "MX"
-    },
-    "email": "mailto:pedro.rodriguez.g@icloud.com",
-    "url": "https://pedro-rgz.notion.site/",
+    "url": "https://pedrorgz.com/",
+    "image": "https://pedrorgz.com/assets/favicon.svg",
+    "jobTitle": "Médico Cirujano & Data Scientist",
     "sameAs": [
-      "https://www.linkedin.com/in/pedro-rgz/",
       "https://github.com/PedroRgz",
-      "https://pedro-rgz.notion.site/"
-    ]
+      "https://www.linkedin.com/in/pedro-rgz/"
+    ],
+    "description": "Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles."
   }
   </script>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <a class="skip" href="#content">Saltar al contenido</a>
+  
+  <!-- Background Particles Animation -->
+  <div id="particles-js"></div>
 
-  <header class="site-header">
-    <nav class="nav" aria-label="Principal">
-      <a class="brand" href="#inicio" aria-label="Inicio">PR</a>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
-      <ul class="nav-list">
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#investigacion">Investigación</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+  <!-- Navigation Bar (Liquid Glass) -->
+  <header id="header">
+    <nav aria-label="Navegación principal">
+      <div class="nav-inner">
+        <div class="logo">PR</div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#contacto" class="nav-link say-hi">Contactar</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger"
+          aria-label="Menú de navegación"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
-  <main id="contenido">
-    <section id="inicio" class="hero">
-      <div class="hero-inner">
+  <main id="content">
+    <!-- Hero Section -->
+    <section class="hero visible">
+      <div class="hero-content">
         <h1>Pedro Rodriguez</h1>
-        <p class="subtitle">Médico Cirujano · Ciencia de Datos · ML · Salud Digital</p>
-        <p class="lead">
-          Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles.
+        <h2>Médico Cirujano · Ciencia de Datos · ML/LLMs</h2>
+        <p>Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles.</p>
+        <div class="cta-buttons">
+          <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+          <a href="#contacto" class="btn btn-ghost">Contactar</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/PedroRgz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">→</a>
+          <a href="https://www.linkedin.com/in/pedro-rgz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+          <a href="mailto:pedro.rodriguez.g@icloud.com" aria-label="Email">@</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+      <h2 class="section-title">About me</h2>
+      <div class="about-content">
+        <p class="about-text">
+          Como médico, he aprendido que la mejor forma de ayudar a las personas es entender sus necesidades profundamente y buscar soluciones efectivas. La medicina me enseñó disciplina, pensamiento crítico y la importancia de tomar decisiones basadas en evidencia. Cada diagnóstico es un problema que resolver, cada paciente una historia que entender.
         </p>
-        <div class="cta">
-          <a class="btn primary" href="#proyectos">Ver proyectos</a>
-          <a class="btn ghost" href="#contacto">Contactar</a>
-        </div>
-        <div class="social">
-          <a href="https://github.com/PedroRgz" aria-label="GitHub" class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.39-3.87-1.39-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.65.23 2.87.11 3.17.75.81 1.2 1.84 1.2 3.1 0 4.42-2.69 5.4-5.26 5.69.42.37.8 1.09.8 2.2v3.26c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
-          <a href="https://www.linkedin.com/in/pedro-rgz/" aria-label="LinkedIn" class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.76-2.2 4.02 0 4.77 2.65 4.77 6.1V24h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.74-2.58 3.54V24H8z"/></svg></a>
-          <a href="mailto:pedro.rodriguez.g@icloud.com" aria-label="Email" class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13L2 6.76V18h20V6.76L12 13zm0-2l10-6H2l10 6z"/></svg></a>
-        </div>
-      </div>
-    </section>
-
-    <section id="proyectos" class="section">
-      <div class="section-head">
-        <h2>Proyectos</h2>
-        <p>Selección de proyectos en programación, ciencia de datos y apps — con filtros por tecnología/área.</p>
-        <div class="filters" role="group" aria-label="Filtros de proyectos">
-          <!-- Filtros generados por JS -->
-        </div>
-      </div>
-      <div class="grid projects-grid" aria-live="polite">
-        <!-- Tarjetas de proyectos renderizadas por JS -->
-      </div>
-    </section>
-
-    <section id="investigacion" class="section alt">
-      <h2>Investigación y Divulgación</h2>
-      <ul class="list bullets">
-        <li>Estadística aplicada a patrones de salud en atletas de alto rendimiento (análisis inicial, institución pública).<span class="ref"> (ver detalles en experiencia)</span></li>
-        <li>Interés en neurociencia y aprendizaje; integración de modelos computacionales y principios de inferencia activa.</li>
-      </ul>
-      <p class="note">Puedes revisar más material en mis repositorios y en mi espacio de Notion.</p>
-    </section>
-
-    <section id="habilidades" class="section">
-      <h2>Habilidades</h2>
-      <div class="skills">
-        <div>
-          <h3>Técnicas</h3>
-          <ul class="list tags">
-            <li>Python</li>
-            <li>SQL</li>
-            <li>Git & GitHub</li>
-            <li>Análisis y visualización de datos</li>
-            <li>Machine Learning (scikit-learn)</li>
-            <li>Swift (iOS)</li>
-            <li>Dash/Plotly</li>
-            <li>Azure ML & fundamentos de Azure</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Blandas</h3>
-          <ul class="list tags">
-            <li>Trabajo en equipo</li>
-            <li>Resolución de problemas</li>
-            <li>Comunicación</li>
-            <li>Adaptabilidad</li>
-            <li>Liderazgo y organización</li>
-          </ul>
-        </div>
-        <div>
-          <h3>Certificaciones</h3>
-          <ul class="list bullets">
-            <li>IBM Data Science — Career Academy (2024)</li>
-            <li>Microsoft DP-100 Azure Data Scientist Associate</li>
-            <li>Microsoft Azure Fundamentals (AZ-900)</li>
-            <li>Academia Platzi — IA & Ciencia de Datos (en curso)</li>
-          </ul>
+        <p class="about-text">
+          Hoy aplico ese mismo enfoque a la ciencia de datos y el desarrollo de software. Me especializo en construir herramientas que transforman datos complejos en información útil, especialmente en el contexto de la salud digital. Combino mi experiencia médica con habilidades técnicas en Python, Machine Learning y desarrollo iOS para crear soluciones que realmente impacten.
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">Ciencia de Datos</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">LLMs</span>
+          <span class="skill-tag">Medicina Clínica</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Azure</span>
+          <span class="skill-tag">Swift (iOS)</span>
+          <span class="skill-tag">Salud Digital</span>
         </div>
       </div>
     </section>
 
-    <section id="experiencia" class="section alt">
-      <h2>Experiencia</h2>
-      <article class="card timeline">
-        <h3>CAIS Médica — Médico General</h3>
-        <p><strong>Sep 2024 – Actual</strong> · Mérida, Yucatán</p>
-        <p>Atención integral de primer nivel, mejora de procesos y herramientas de gestión clínica.</p>
-      </article>
-      <article class="card timeline">
-        <h3>Centro de Alto Rendimiento Deportivo — Servicio Social (Médico)</h3>
-        <p><strong>Ago 2023 – Jul 2024</strong> · Mérida, Yucatán</p>
-        <p>Creación del área médica desde cero, organización de expedientes, estrategias de comunicación y análisis estadístico inicial.</p>
-      </article>
+    <!-- Projects Section -->
+    <section id="proyectos">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-description">
+        Una selección de proyectos que demuestran mi trabajo en ciencia de datos, desarrollo de aplicaciones y análisis. Desde pipelines de ML hasta apps iOS y notebooks exploratorios.
+      </p>
+      
+      <!-- Project Filters -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="destacados">Destacados</button>
+        <button class="filter-btn" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="ciencia-de-datos">Ciencia de datos</button>
+        <button class="filter-btn" data-filter="ios">iOS</button>
+        <button class="filter-btn" data-filter="notebooks">Notebooks</button>
+        <button class="filter-btn" data-filter="programacion">Programación</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projectsGrid"></div>
+
+      <!-- "Show More" Button -->
+      <div class="show-more">
+        <button class="btn btn-primary" id="showMoreBtn" style="display: none;">Mostrar más proyectos</button>
+      </div>
     </section>
 
-    <section id="contacto" class="section">
-      <h2>Contacto</h2>
-      <p>¿Colaboramos en un proyecto o investigación? Escríbeme:</p>
-      <ul class="contact">
-        <li><a href="mailto:pedro.rodriguez.g@icloud.com">pedro.rodriguez.g@icloud.com</a></li>
-        <li><a href="https://www.linkedin.com/in/pedro-rgz/">LinkedIn</a></li>
-        <li><a href="https://github.com/PedroRgz">GitHub</a></li>
-        <li><a href="https://pedro-rgz.notion.site/">Notion</a></li>
-      </ul>
+    <!-- Experience & Formación Section -->
+    <section id="experiencia">
+      <h2 class="section-title">Experiencia & Formación</h2>
+      <p class="section-description">
+        Mi trayectoria profesional y académica.
+      </p>
+      
+      <div class="timeline-container">
+        <div class="timeline-nav">
+          <button class="timeline-nav-btn" id="timelineLeft">‹</button>
+          <button class="timeline-nav-btn" id="timelineRight">›</button>
+        </div>
+        <div class="timeline-wrapper" id="timelineWrapper">
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </div>
     </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades">
+      <h2 class="section-title">Habilidades</h2>
+      <p class="section-description">
+        Competencias técnicas y habilidades blandas desarrolladas a través de proyectos prácticos y experiencia profesional.
+      </p>
+      
+      <!-- Grouped Skills Container (Technical & Soft Skills) -->
+      <div class="skills-container">
+        <h3>Habilidades Técnicas</h3>
+        <div id="technicalSkills" class="tech-skills"></div>
+        <hr />
+        <h3>Habilidades Blandas</h3>
+        <ul class="soft-skills">
+          <li>Trabajo en equipo</li>
+          <li>Resolución de problemas</li>
+          <li>Comunicación</li>
+          <li>Adaptabilidad</li>
+          <li>Liderazgo y organización</li>
+        </ul>
+      </div>
+      
+      <!-- Certifications -->
+      <div class="certifications">
+        <h3>Certificaciones</h3>
+        <ul>
+          <li>IBM Data Science — Career Academy (2024)</li>
+          <li>Microsoft DP-100 Azure Data Scientist Associate</li>
+          <li>Microsoft Azure Fundamentals (AZ-900)</li>
+          <li>Academia Platzi — IA & Ciencia de Datos (en curso)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-description">
+        ¿Tienes un proyecto en mente o quieres colaborar? Me encantaría escucharte. Estoy siempre abierto a nuevas oportunidades y conversaciones interesantes.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:pedro.rodriguez.g@icloud.com" class="contact-link">
+          <div class="contact-icon">@</div>
+          <div class="contact-info">
+            <div class="contact-label">Email</div>
+            <div class="contact-value">pedro.rodriguez.g@icloud.com</div>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/pedro-rgz/" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">in</div>
+          <div class="contact-info">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value">/in/pedro-rgz</div>
+          </div>
+        </a>
+        <a href="https://github.com/PedroRgz" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">→</div>
+          <div class="contact-info">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value">/PedroRgz</div>
+          </div>
+        </a>
+        <a href="https://pedro-rgz.notion.site/" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <div class="contact-icon">N</div>
+          <div class="contact-info">
+            <div class="contact-label">Notion</div>
+            <div class="contact-value">pedro-rgz.notion.site</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Pedro Rodriguez. Todos los derechos reservados.</p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Pedro Rodriguez. Hecho con HTML · CSS · JS. Hospedado en GitHub Pages.</p>
-  </footer>
-
-  <script>
-    // Simple inline SVG icons to avoid external dependencies
-    const GITHUB_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.11.79-.25.79-.56v-2.01c-3.2.7-3.87-1.39-3.87-1.39-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.52.11-3.17 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.49 3.2-1.18 3.2-1.18.63 1.65.23 2.87.11 3.17.75.81 1.2 1.84 1.2 3.1 0 4.42-2.69 5.4-5.26 5.69.42.37.8 1.09.8 2.2v3.26c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>`;
-    const LINKEDIN_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.76-2.2 4.02 0 4.77 2.65 4.77 6.1V24h-4v-6.7c0-1.6-.03-3.66-2.23-3.66-2.24 0-2.58 1.74-2.58 3.54V24H8z"/></svg>`;
-    const MAIL_SVG = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 13L2 6.76V18h20V6.76L12 13zm0-2l10-6H2l10 6z"/></svg>`;
-  </script>
-  <script src="script.js" defer></script>
+  <!-- Scripts -->
+  <!-- Note: js/app.js depends on variables defined in js/data.js. Both scripts use 'defer' to defer execution until after HTML parsing, and their document order ensures data.js loads before app.js. -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/particles-config.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

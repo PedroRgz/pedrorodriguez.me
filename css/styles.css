@@ -29,6 +29,30 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
+    /* Skip to content link for accessibility */
+    .skip {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 10000;
+      border-radius: 0 0 4px 0;
+    }
+    .skip:focus {
+      top: 0;
+    }
+    /* Particles background */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
     /* Header (Liquid Glass Navigation) */
     header {
       position: fixed;

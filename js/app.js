@@ -20,14 +20,16 @@ function renderProjects(filter = 'destacados') {
     setTimeout(() => card.classList.add('visible'), index * 100);
     
     const linksHTML = [];
-    if (project.links.code) {
-      linksHTML.push(`<a href="${project.links.code}" class="project-link code" target="_blank" rel="noopener noreferrer">Código</a>`);
-    }
-    if (project.links.demo) {
-      linksHTML.push(`<a href="${project.links.demo}" class="project-link demo" target="_blank" rel="noopener noreferrer">Demo</a>`);
-    }
-    if (project.links.notebook) {
-      linksHTML.push(`<a href="${project.links.notebook}" class="project-link notebook" target="_blank" rel="noopener noreferrer">Notebook</a>`);
+    if (project.links) {
+      if (project.links.code) {
+        linksHTML.push(`<a href="${project.links.code}" class="project-link code" target="_blank" rel="noopener noreferrer">Código</a>`);
+      }
+      if (project.links.demo) {
+        linksHTML.push(`<a href="${project.links.demo}" class="project-link demo" target="_blank" rel="noopener noreferrer">Demo</a>`);
+      }
+      if (project.links.notebook) {
+        linksHTML.push(`<a href="${project.links.notebook}" class="project-link notebook" target="_blank" rel="noopener noreferrer">Notebook</a>`);
+      }
     }
     
     card.innerHTML = `
@@ -141,6 +143,8 @@ function initMobileMenu() {
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
+      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !isExpanded);
       hamburger.classList.toggle('active');
       navLinks.classList.toggle('active');
     });
@@ -148,6 +152,7 @@ function initMobileMenu() {
     // Cerrar menú al hacer clic en enlace
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
+        hamburger.setAttribute('aria-expanded', 'false');
         hamburger.classList.remove('active');
         navLinks.classList.remove('active');
       });
@@ -157,16 +162,24 @@ function initMobileMenu() {
 
 // ========== EFECTO SCROLL EN HEADER ==========
 function initHeaderScroll() {
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (header) {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const header = document.getElementById('header');
+        if (header) {
+          if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
-  });
+  }
+  window.addEventListener('scroll', onScroll);
 }
 
 // ========== INTERSECTION OBSERVER PARA SECCIONES ==========
@@ -176,6 +189,7 @@ function initSectionObserver() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        sectionObserver.unobserve(entry.target);
       }
     });
   }, { 
@@ -188,8 +202,6 @@ function initSectionObserver() {
 
 // ========== INICIALIZACIÓN PRINCIPAL ==========
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 Inicializando portfolio de Pedro Rodriguez...');
-  
   // Renderizar contenido
   renderProjects('destacados');
   renderTimeline();
@@ -201,6 +213,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initHeaderScroll();
   initSectionObserver();
-  
-  console.log('✅ Portfolio inicializado correctamente');
 });

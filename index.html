@@ -4,17 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pedro Rodriguez — Médico Cirujano & Data Scientist</title>
+  <meta name="description" content="Pedro Rodriguez — Médico Cirujano y Data Scientist. Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles.">
+  <meta property="og:title" content="Pedro Rodriguez — Médico Cirujano & Data Scientist">
+  <meta property="og:description" content="Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pedrorgz.com/">
+  <meta property="og:image" content="https://pedrorgz.com/assets/favicon.svg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pedro Rodriguez",
+    "url": "https://pedrorgz.com/",
+    "image": "https://pedrorgz.com/assets/favicon.svg",
+    "jobTitle": "Médico Cirujano & Data Scientist",
+    "sameAs": [
+      "https://github.com/PedroRgz",
+      "https://www.linkedin.com/in/pedro-rgz/"
+    ],
+    "description": "Integro medicina, programación y análisis de datos para resolver problemas clínicos y construir herramientas útiles."
+  }
+  </script>
   
   <!-- Estilos -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a class="skip" href="#content">Saltar al contenido</a>
+  
   <!-- Background Particles Animation -->
   <div id="particles-js"></div>
 
   <!-- Navigation Bar (Liquid Glass) -->
   <header id="header">
-    <nav>
+    <nav aria-label="Navegación principal">
       <div class="nav-inner">
         <div class="logo">PR</div>
         <ul class="nav-links" id="navLinks">
@@ -23,11 +47,15 @@
           <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
           <li><a href="#contacto" class="nav-link say-hi">Contactar</a></li>
         </ul>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger"
+          aria-label="Menú de navegación"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </nav>
   </header>
@@ -44,8 +72,8 @@
           <a href="#contacto" class="btn btn-ghost">Contactar</a>
         </div>
         <div class="social-links">
-          <a href="https://github.com/PedroRgz" target="_blank" aria-label="GitHub">→</a>
-          <a href="https://www.linkedin.com/in/pedro-rgz/" target="_blank" aria-label="LinkedIn">in</a>
+          <a href="https://github.com/PedroRgz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">→</a>
+          <a href="https://www.linkedin.com/in/pedro-rgz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
           <a href="mailto:pedro.rodriguez.g@icloud.com" aria-label="Email">@</a>
         </div>
       </div>
@@ -159,28 +187,28 @@
         ¿Tienes un proyecto en mente o quieres colaborar? Me encantaría escucharte. Estoy siempre abierto a nuevas oportunidades y conversaciones interesantes.
       </p>
       <div class="contact-links">
-        <a href="mailto:pedro.rodriguez.g@icloud.com" class="contact-link" target="_blank">
+        <a href="mailto:pedro.rodriguez.g@icloud.com" class="contact-link">
           <div class="contact-icon">@</div>
           <div class="contact-info">
             <div class="contact-label">Email</div>
             <div class="contact-value">pedro.rodriguez.g@icloud.com</div>
           </div>
         </a>
-        <a href="https://www.linkedin.com/in/pedro-rgz/" class="contact-link" target="_blank">
+        <a href="https://www.linkedin.com/in/pedro-rgz/" class="contact-link" target="_blank" rel="noopener noreferrer">
           <div class="contact-icon">in</div>
           <div class="contact-info">
             <div class="contact-label">LinkedIn</div>
             <div class="contact-value">/in/pedro-rgz</div>
           </div>
         </a>
-        <a href="https://github.com/PedroRgz" class="contact-link" target="_blank">
+        <a href="https://github.com/PedroRgz" class="contact-link" target="_blank" rel="noopener noreferrer">
           <div class="contact-icon">→</div>
           <div class="contact-info">
             <div class="contact-label">GitHub</div>
             <div class="contact-value">/PedroRgz</div>
           </div>
         </a>
-        <a href="https://pedro-rgz.notion.site/" class="contact-link" target="_blank">
+        <a href="https://pedro-rgz.notion.site/" class="contact-link" target="_blank" rel="noopener noreferrer">
           <div class="contact-icon">N</div>
           <div class="contact-info">
             <div class="contact-label">Notion</div>

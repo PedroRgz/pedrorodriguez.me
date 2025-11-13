@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       },
-      "retina_detect": true
+      "retina_detect": true,
+      "background": { "color": "#f5f7fa" }
     });
   }
 });

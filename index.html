@@ -225,9 +225,10 @@
   </main>
 
   <!-- Scripts -->
+  <!-- Note: js/app.js depends on variables defined in js/data.js. Both scripts use 'defer' to defer execution until after HTML parsing, and their document order ensures data.js loads before app.js. -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/particles-config.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/particles-config.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

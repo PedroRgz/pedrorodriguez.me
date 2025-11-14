@@ -34,7 +34,7 @@
   <a class="skip" href="#content">Saltar al contenido</a>
   
   <!-- Background Particles Animation -->
-  <div id="particles-js"></div>
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
 
   <!-- Navigation Bar (Liquid Glass) -->
   <header id="header">
@@ -142,8 +142,10 @@
           <button class="timeline-nav-btn" id="timelineLeft">‹</button>
           <button class="timeline-nav-btn" id="timelineRight">›</button>
         </div>
-        <div class="timeline-wrapper" id="timelineWrapper">
-          <div class="timeline" id="timeline"></div>
+        <div class="fade-scroll-wrapper">
+          <div class="timeline-wrapper" id="timelineWrapper">
+            <div class="timeline" id="timeline"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -212,9 +214,8 @@
 
   <!-- Scripts -->
   <!-- Note: js/app.js depends on variables defined in js/data.js. Both scripts use 'defer' to defer execution until after HTML parsing, and their document order ensures data.js loads before app.js. -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="js/data.js" defer></script>
-  <script src="js/particles-config.js" defer></script>
+  <script src="js/particles-background.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
 </html>

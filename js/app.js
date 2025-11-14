@@ -51,28 +51,58 @@ function renderProjects(filter = 'destacados') {
 }
 
 // ========== RENDERIZAR TIMELINE ==========
+let timelineObserverInstance = null;
+
 function renderTimeline() {
   const timelineEl = document.getElementById('timeline');
   if (!timelineEl) return;
 
   timelineEl.innerHTML = '';
 
-  timeline.forEach((item, index) => {
+  timeline.forEach((item) => {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'timeline-card-wrapper';
+
     const card = document.createElement('div');
     card.className = 'timeline-card';
-    setTimeout(() => card.classList.add('visible'), index * 150);
+
+    const tagsHTML = (item.tags || [])
+      .map(tag => `<span class="timeline-tag">${tag}</span>`)
+      .join('');
 
     card.innerHTML = `
+      ${item.year ? `<span class="timeline-year">${item.year}</span>` : ''}
       <h3 class="timeline-title">${item.title}</h3>
       <p class="timeline-subtitle">${item.subtitle}</p>
       <p class="timeline-description">${item.description}</p>
-      <div class="timeline-tags">
-        ${item.tags.map(tag => `<span class="timeline-tag">${tag}</span>`).join('')}
-      </div>
+      <div class="timeline-tags">${tagsHTML}</div>
     `;
-    
-    timelineEl.appendChild(card);
+
+    wrapper.appendChild(card);
+    timelineEl.appendChild(wrapper);
   });
+
+  initTimelineObserver();
+}
+
+function initTimelineObserver() {
+  const cards = document.querySelectorAll('.timeline-card');
+  if (!cards.length) return;
+
+  if (timelineObserverInstance) {
+    timelineObserverInstance.disconnect();
+  }
+
+  timelineObserverInstance = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        timelineObserverInstance.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => timelineObserverInstance.observe(card));
 }
 
 // ========== RENDERIZAR HABILIDADES ==========
@@ -124,7 +154,7 @@ function initTimelineNavigation() {
 
   if (!timelineWrapper) return;
 
-  const scrollAmount = 400;
+  const scrollAmount = 350;
 
   const scrollToLatest = () => {
     const maxScrollLeft = Math.max(
@@ -138,13 +168,13 @@ function initTimelineNavigation() {
 
   if (timelineLeft) {
     timelineLeft.addEventListener('click', () => {
-      timelineWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      timelineWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
   }
 
   if (timelineRight) {
     timelineRight.addEventListener('click', () => {
-      timelineWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      timelineWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
 }

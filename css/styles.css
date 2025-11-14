@@ -32,17 +32,20 @@
     /* Skip to content link for accessibility */
     .skip {
       position: absolute;
-      top: -40px;
-      left: 0;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -150%);
       background: var(--primary);
       color: white;
       padding: 0.5rem 1rem;
       text-decoration: none;
       z-index: 10000;
-      border-radius: 0 0 4px 0;
+      border-radius: 0 0 4px 4px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease;
     }
     .skip:focus {
-      top: 0;
+      transform: translate(-50%, 0);
     }
     /* Particles background */
     #particles-js {
@@ -89,7 +92,6 @@
       flex: 1;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 1.5rem;
     }
     header.scrolled .nav-inner {
@@ -103,15 +105,17 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      text-decoration: none;
     }
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
       align-items: center;
       padding: 0;
       margin: 0;
       justify-content: center;
+      flex: 1;
     }
     .nav-link {
       color: var(--text);
@@ -148,6 +152,7 @@
       border-radius: 50px;
       font-weight: 600;
       transition: var(--transition);
+      margin-left: auto;
     }
     .say-hi:hover {
       transform: translateY(-2px);
@@ -269,6 +274,9 @@
       color: white;
     }
     /* Section Styles */
+    main {
+      padding-bottom: 6rem;
+    }
     section {
       padding: 5rem 2rem;
       max-width: 1200px;
@@ -276,6 +284,7 @@
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.6s ease, transform 0.6s ease;
+      scroll-margin-top: 120px;
     }
     section.visible {
       opacity: 1;
@@ -771,6 +780,7 @@
       .say-hi {
         width: 100%;
         text-align: center;
+        margin-left: 0;
       }
       .hamburger {
         display: flex;
@@ -806,3 +816,7 @@
       }
     }
   
+    #contacto {
+      padding-bottom: 8rem;
+      margin-bottom: 4rem;
+    }

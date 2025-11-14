@@ -122,15 +122,29 @@ function initTimelineNavigation() {
   const timelineRight = document.getElementById('timelineRight');
   const timelineWrapper = document.getElementById('timelineWrapper');
 
-  if (timelineLeft && timelineWrapper) {
+  if (!timelineWrapper) return;
+
+  const scrollAmount = 400;
+
+  const scrollToLatest = () => {
+    const maxScrollLeft = Math.max(
+      0,
+      timelineWrapper.scrollWidth - timelineWrapper.clientWidth
+    );
+    timelineWrapper.scrollLeft = maxScrollLeft;
+  };
+
+  requestAnimationFrame(scrollToLatest);
+
+  if (timelineLeft) {
     timelineLeft.addEventListener('click', () => {
-      timelineWrapper.scrollBy({ left: -400, behavior: 'smooth' });
+      timelineWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
 
-  if (timelineRight && timelineWrapper) {
+  if (timelineRight) {
     timelineRight.addEventListener('click', () => {
-      timelineWrapper.scrollBy({ left: 400, behavior: 'smooth' });
+      timelineWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
   }
 }

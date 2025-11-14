@@ -28,6 +28,7 @@
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
+      overscroll-behavior-y: contain; /* evita el espacio vacío al finalizar el scroll */
     }
     /* Skip to content link for accessibility */
     .skip {

@@ -21,7 +21,6 @@
     html {
       scroll-behavior: smooth;
       font-size: 16px;
-      min-height: 100%;
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -30,9 +29,6 @@
       line-height: 1.6;
       overflow-x: hidden;
       overscroll-behavior-y: contain; /* evita el espacio vacío al finalizar el scroll */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
     /* Skip to content link for accessibility */
     .skip {
@@ -283,9 +279,6 @@
     /* Section Styles */
     main {
       padding-bottom: 6rem;
-      flex: 1 0 auto;
-      display: flex;
-      flex-direction: column;
     }
     section {
       padding: 5rem 2rem;

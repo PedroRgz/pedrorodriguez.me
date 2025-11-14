@@ -59,7 +59,9 @@ function renderTimeline() {
 
   timelineEl.innerHTML = '';
 
-  timeline.forEach((item) => {
+  const orderedTimeline = [...timeline].reverse();
+
+  orderedTimeline.forEach((item) => {
     const wrapper = document.createElement('div');
     wrapper.className = 'timeline-card-wrapper';
 
@@ -71,7 +73,6 @@ function renderTimeline() {
       .join('');
 
     card.innerHTML = `
-      ${item.year ? `<span class="timeline-year">${item.year}</span>` : ''}
       <h3 class="timeline-title">${item.title}</h3>
       <p class="timeline-subtitle">${item.subtitle}</p>
       <p class="timeline-description">${item.description}</p>
@@ -154,29 +155,57 @@ function initTimelineNavigation() {
 
   if (!timelineWrapper) return;
 
-  const scrollAmount = 350;
+  const getMaxScrollLeft = () => Math.max(
+    0,
+    timelineWrapper.scrollWidth - timelineWrapper.clientWidth
+  );
+
+  const updateButtonState = () => {
+    const maxScrollLeft = getMaxScrollLeft();
+    const atStart = timelineWrapper.scrollLeft <= 4;
+    const atEnd = timelineWrapper.scrollLeft >= maxScrollLeft - 4;
+
+    if (timelineLeft) timelineLeft.disabled = atStart;
+    if (timelineRight) timelineRight.disabled = atEnd;
+  };
+
+  const scrollByAmount = (delta) => {
+    const maxScrollLeft = getMaxScrollLeft();
+    const target = Math.min(
+      maxScrollLeft,
+      Math.max(0, timelineWrapper.scrollLeft + delta)
+    );
+    timelineWrapper.scrollTo({ left: target, behavior: 'smooth' });
+  };
 
   const scrollToLatest = () => {
-    const maxScrollLeft = Math.max(
-      0,
-      timelineWrapper.scrollWidth - timelineWrapper.clientWidth
-    );
-    timelineWrapper.scrollLeft = maxScrollLeft;
+    timelineWrapper.scrollLeft = getMaxScrollLeft();
+    updateButtonState();
   };
 
   requestAnimationFrame(scrollToLatest);
 
+  const getScrollStep = () => Math.max(240, timelineWrapper.clientWidth * 0.7);
+
   if (timelineLeft) {
     timelineLeft.addEventListener('click', () => {
-      timelineWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      scrollByAmount(-getScrollStep());
     });
   }
 
   if (timelineRight) {
     timelineRight.addEventListener('click', () => {
-      timelineWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      scrollByAmount(getScrollStep());
     });
   }
+
+  timelineWrapper.addEventListener('scroll', () => {
+    requestAnimationFrame(updateButtonState);
+  });
+
+  window.addEventListener('resize', () => {
+    requestAnimationFrame(updateButtonState);
+  });
 }
 
 // ========== MENU HAMBURGUESA ==========

@@ -499,6 +499,14 @@
       color: white;
       transform: scale(1.08);
     }
+    .timeline-nav-btn:disabled,
+    .timeline-nav-btn:disabled:hover {
+      opacity: 0.35;
+      cursor: not-allowed;
+      background: var(--card-bg);
+      color: var(--primary);
+      transform: none;
+    }
     .fade-scroll-wrapper {
       position: relative;
     }
@@ -549,7 +557,7 @@
     .timeline::before {
       content: '';
       position: absolute;
-      top: 3.5rem;
+      top: 2.5rem;
       left: 0;
       right: 0;
       height: 2px;
@@ -563,19 +571,6 @@
       padding-top: 2.5rem;
       scroll-snap-align: start;
     }
-    .timeline-card-wrapper::before {
-      content: '';
-      position: absolute;
-      top: 3rem;
-      left: 1.5rem;
-      width: 1rem;
-      height: 1rem;
-      background: var(--primary);
-      border: 2px solid var(--background);
-      border-radius: 50%;
-      z-index: 1;
-      box-shadow: 0 0 0 6px rgba(5, 102, 141, 0.12);
-    }
     .timeline-card {
       background: var(--card-bg);
       border-radius: 16px;
@@ -586,6 +581,20 @@
       opacity: 0;
       transform: translateY(20px);
       height: 100%;
+      position: relative;
+    }
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      top: -1.75rem;
+      left: 2rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: 3px solid var(--background);
+      box-shadow: 0 0 0 6px rgba(5, 102, 141, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .timeline-card.visible {
       opacity: 1;
@@ -596,14 +605,9 @@
       box-shadow: var(--shadow-lg);
       border-color: var(--primary);
     }
-    .timeline-year {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      font-weight: 700;
-      margin-bottom: 1rem;
+    .timeline-card:hover::before {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 8px rgba(5, 102, 141, 0.18);
     }
     .timeline-title {
       font-size: 1.3rem;
@@ -880,6 +884,6 @@
     }
   
     #contacto {
-      padding-bottom: 8rem;
-      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      margin-bottom: 0;
     }

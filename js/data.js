@@ -87,39 +87,46 @@ const projects = [
 // ========== EXPERIENCIA Y FORMACIÓN ==========
 const timeline = [
   {
-    id: 1,
-    title: "Data Scientist",
-    subtitle: "Proyecto Independiente",
-    description: "Desarrollo de modelos de ML para análisis predictivo en salud. Implementación de pipelines en Azure Cloud y despliegue de soluciones escalables.",
-    tags: ["Machine Learning", "Azure", "Python"]
+    year: '2025',
+    title: 'Especialización en IA Médica',
+    subtitle: 'Desarrollo continuo',
+    description: 'Desarrollando proyectos de machine learning aplicados a diagnóstico y pronóstico médico.',
+    tags: ['ML', 'Salud Digital']
   },
   {
-    id: 2,
-    title: "Certificación IBM Data Science",
-    subtitle: "Career Academy",
-    description: "Programa completo de ciencia de datos incluyendo Python, ML, análisis estadístico y visualización de datos.",
-    tags: ["Python", "ML", "Data Analysis"]
+    year: '2025',
+    title: 'Episcopio — Social Media Analytics',
+    subtitle: 'Proyecto destacado',
+    description: 'Pipeline y API para analítica de redes sociales desplegado en Azure.',
+    tags: ['Azure', 'Python', 'API']
   },
   {
-    id: 3,
-    title: "Desarrollo iOS",
-    subtitle: "Freelance",
-    description: "Desarrollo de aplicaciones móviles enfocadas en salud digital y bienestar utilizando Swift y SwiftUI.",
-    tags: ["Swift", "SwiftUI", "HealthKit"]
+    year: '2024',
+    title: 'CAIS Médica — Médico General',
+    subtitle: 'Sep 2024 – Actual · Mérida, Yucatán',
+    description: 'Atención integral de primer nivel, mejora de procesos y herramientas de gestión clínica.',
+    tags: ['Medicina', 'Gestión']
   },
   {
-    id: 4,
-    title: "Médico Cirujano",
-    subtitle: "Práctica Clínica",
-    description: "Atención médica integral, diagnóstico y tratamiento. Experiencia en urgencias y medicina general.",
-    tags: ["Medicina", "Diagnóstico", "Urgencias"]
+    year: '2024',
+    title: 'Azure Cloud Certification',
+    subtitle: 'Microsoft Azure',
+    description: 'Certificación en Microsoft Azure para desarrollo de soluciones en la nube.',
+    tags: ['Azure', 'Cloud']
   },
   {
-    id: 5,
-    title: "Licenciatura en Medicina",
-    subtitle: "Universidad",
-    description: "Formación médica completa con énfasis en medicina basada en evidencia y pensamiento crítico.",
-    tags: ["Medicina", "Investigación", "Ciencias Básicas"]
+    year: '2024',
+    title: 'IBM Data Science Career Academy',
+    subtitle: 'Certificación profesional',
+    description: 'Programa completo de ciencia de datos con proyectos prácticos en Python, ML y visualización.',
+    tags: ['Python', 'ML', 'Data Science']
+  },
+  {
+    year: '2023',
+    title: 'Centro Alto Rendimiento — Servicio Social',
+    subtitle: 'Ago 2023 – Jul 2024 · Mérida, Yucatán',
+    description: 'Creación del área médica desde cero, organización de expedientes y análisis estadístico.',
+    tags: ['Medicina', 'Análisis']
   }
 ];
 

@@ -1,1 +1,5 @@
 to garbage
+
+prueba de commit
+
+configurando git en codespace

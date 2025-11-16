@@ -888,12 +888,3 @@
       padding-bottom: 6rem; /* Aumentado para dar espacio antes del footer */
       margin-bottom: 0;
     }
-
-#particles-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}

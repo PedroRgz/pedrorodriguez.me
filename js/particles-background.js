@@ -102,16 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function handleResize() {
-    cancelAnimationFrame(animationFrame);
+    // No cancelar la animación, solo ajustar el canvas
+    const oldWidth = width;
+    const oldHeight = height;
+    
     setCanvasSize();
-    initParticles();
-    animate();
+    
+    // Ajustar posiciones de partículas proporcionalmente en lugar de reiniciar
+    const scaleX = width / oldWidth;
+    const scaleY = height / oldHeight;
+    
+    particles.forEach(particle => {
+      particle.x *= scaleX;
+      particle.y *= scaleY;
+    });
   }
 
+  // Usar debounce más largo para evitar reinicializaciones frecuentes
   let resizeTimeout = null;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(handleResize, 150);
+    resizeTimeout = setTimeout(handleResize, 300);
   });
 
   setCanvasSize();

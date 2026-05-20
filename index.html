@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pedro Rodriguez — Physician, Data Scientist & Builder</title>
-  <meta name="description" content="Pedro Rodriguez: physician, developer, and data scientist integrating medicine, programming, and analytics to solve clinical problems and deliver tools for healthcare teams." />
-  <meta property="og:title" content="Pedro Rodriguez — Physician, Data Scientist & Builder" />
-  <meta property="og:description" content="I integrate medicine, programming, and data science to solve clinical problems and ship decision-support tools for the medical community." />
+  <title>Pedro Rodriguez — Physician · Data Scientist · Builder</title>
+  <meta name="description" content="Pedro Rodriguez. Physician with a neuroscience focus and a data science practice. Selected work, experience and contact." />
+
+  <meta property="og:title" content="Pedro Rodriguez — Physician · Data Scientist · Builder" />
+  <meta property="og:description" content="Pedro Rodriguez. Physician with a neuroscience focus and a data science practice. Selected work, experience and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pedrorgz.com/" />
   <meta property="og:image" content="https://pedrorgz.com/assets/favicon.svg" />
+
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -18,203 +21,34 @@
     "name": "Pedro Rodriguez",
     "url": "https://pedrorgz.com/",
     "image": "https://pedrorgz.com/assets/favicon.svg",
-    "jobTitle": "Physician & Data Scientist",
+    "jobTitle": "Physician · Data Scientist",
     "sameAs": [
       "https://github.com/PedroRgz",
-      "https://www.linkedin.com/in/pedro-rgz/"
+      "https://www.linkedin.com/in/pedro-rgz/",
+      "https://www.kaggle.com/pedrorgz"
     ],
-    "description": "I integrate medicine, programming, and data science to solve clinical problems, streamline workflows, and deliver useful solutions for the medical community."
+    "description": "Physician with a neuroscience focus and a data science practice. I translate clinical and business questions into datasets, ML prototypes, and decision-support tools."
   }
   </script>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Fonts: Newsreader (serif display), Instrument Serif (alt), Geist (sans), Geist Mono, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/editorial.css" />
 </head>
 <body>
-  <a class="skip" href="#content">Skip to content</a>
+  <div id="root"></div>
 
-  <!-- Background Particles Animation -->
-  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <!-- React + Babel (pinned) -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-  <!-- Navigation Bar (Liquid Glass) -->
-  <header id="header">
-    <nav aria-label="Main navigation">
-      <div class="nav-inner">
-        <a href="#content" class="logo" aria-label="Go to start">PR</a>
-        <div class="nav-menu" id="navMenu">
-          <ul class="nav-links">
-            <li><a href="#proyectos" class="nav-link" data-section="proyectos">Projects</a></li>
-            <li><a href="#experiencia" class="nav-link" data-section="experiencia">Experience</a></li>
-            <li><a href="#habilidades" class="nav-link" data-section="habilidades">Skills</a></li>
-          </ul>
-          <a href="#contacto" class="nav-link say-hi" data-section="contacto">Contact</a>
-        </div>
-        <button class="hamburger" id="hamburger"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="navMenu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <main id="content">
-    <!-- Hero Section -->
-    <section class="hero visible">
-      <div class="hero-content">
-        <h1>Pedro Rodriguez</h1>
-        <h2>Physician · Developer · Data Science/ML/LLMs</h2>
-        <p>Physician focused on medical neuroscience who turned self-directed coding into a data science career. I translate clinical and business questions into datasets, ML prototypes, and decision-support tools for recruiters, founders, and healthcare teams.</p>
-        <div class="cta-buttons">
-          <a href="#proyectos" class="btn btn-primary">View projects</a>
-          <a href="#contacto" class="btn btn-ghost">Contact me</a>
-        </div>
-        <div class="social-links">
-          <a href="https://github.com/PedroRgz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">→</a>
-          <a href="https://www.linkedin.com/in/pedro-rgz/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
-          <a href="mailto:pedro.rodriguez.g@icloud.com" aria-label="Email">@</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-      <h2 class="section-title">About me</h2>
-      <div class="about-content">
-        <p class="about-text">
-          I am a general practitioner with a neuroscience focus and a passion for data science. Starting as a self-taught developer, I turned curiosity into production work: streamlining clinical workflows with macros and structured data, building ML pipelines, and shaping executive dashboards.
-        </p>
-        <p class="about-text">
-          I thrive under pressure, collaborate well with multidisciplinary teams, and keep an optimistic mindset—every challenge becomes a hypothesis to validate. I seek engagements where I can connect medicine, analytics, and product strategy to deliver actionable insights for recruiters, startups, and healthcare organizations.
-        </p>
-        <div class="skill-tags">
-          <span class="skill-tag">Data Science</span>
-          <span class="skill-tag">Machine Learning</span>
-          <span class="skill-tag">Clinical Medicine</span>
-          <span class="skill-tag">Neuroscience</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL & APIs</span>
-          <span class="skill-tag">Azure</span>
-          <span class="skill-tag">Clinical Automation</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="proyectos">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-description">
-        Practical case studies that highlight how I gather data, model it, and turn it into decisions: launch prediction, financial analytics, platform design, and Kaggle contributions.
-      </p>
-
-      <!-- Project Filters -->
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="destacados">Featured</button>
-        <button class="filter-btn" data-filter="todos">All</button>
-        <button class="filter-btn" data-filter="ciencia-de-datos">Data Science</button>
-        <button class="filter-btn" data-filter="ios">iOS</button>
-        <button class="filter-btn" data-filter="notebooks">Notebooks</button>
-        <button class="filter-btn" data-filter="programacion">Engineering</button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="projects-grid" id="projectsGrid"></div>
-
-      <!-- "Show More" Button -->
-      <div class="show-more">
-        <button class="btn btn-primary" id="showMoreBtn" style="display: none;">Show more projects</button>
-      </div>
-    </section>
-
-    <!-- Experience & Education Section -->
-    <section id="experiencia">
-      <h2 class="section-title">Experience & Education</h2>
-      <p class="section-description">
-        Clinical practice, data-driven initiatives, and continuous education that support my hybrid profile.
-      </p>
-
-      <div class="timeline-container">
-        <div class="timeline-nav">
-          <button class="timeline-nav-btn" id="timelineLeft">‹</button>
-          <button class="timeline-nav-btn" id="timelineRight">›</button>
-        </div>
-        <div class="fade-scroll-wrapper">
-          <div class="timeline-wrapper" id="timelineWrapper">
-            <div class="timeline" id="timeline"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="habilidades">
-      <h2 class="section-title">Skills</h2>
-      <p class="section-description">
-        Technical competencies and soft skills built through hands-on projects and clinical experience.
-      </p>
-
-      <!-- Grouped Skills Container (Technical & Soft Skills) -->
-      <div class="skills-container">
-        <h3>Technical skills</h3>
-        <div id="technicalSkills" class="tech-skills"></div>
-        <hr />
-        <h3>Soft skills</h3>
-        <ul class="soft-skills">
-          <li>Teamwork</li>
-          <li>Problem solving</li>
-          <li>Communication</li>
-          <li>Adaptability</li>
-          <li>Leadership & organization</li>
-        </ul>
-      </div>
-
-      <!-- Certifications -->
-      <div class="certifications">
-        <h3>Certifications</h3>
-        <ul>
-          <li>IBM Data Science Professional Certificate</li>
-          <li>Microsoft Certified: Azure Fundamentals</li>
-          <li>Platzi Data Science &amp; AI Academy (in progress)</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-description">
-        Have a project in mind or want to collaborate? I would love to hear from you—let's discuss how I can help your team.
-      </p>
-      <div class="contact-icons" aria-label="Contact options">
-        <a href="mailto:pedro.rodriguez.g@icloud.com" class="contact-icon-link" aria-label="Email">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25z"/><path d="m4.5 6.5 7.5 5.25L19.5 6.5"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/pedro-rgz/" class="contact-icon-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M6.5 9.5V18"/><path d="M6.5 6.5h.01"/><path d="M10.5 18v-5.25A2.25 2.25 0 0 1 12.75 10.5h0A2.25 2.25 0 0 1 15 12.75V18"/><path d="M18 18v-5.5a3 3 0 0 0-3-3h-.5"/></svg>
-        </a>
-        <a href="https://github.com/PedroRgz" class="contact-icon-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M9 19.25c-4 1.25-4-2.5-5.5-3m11 6v-2.88a2.52 2.52 0 0 0-.7-2c2.3-.25 4.7-1.12 4.7-5.12a4 4 0 0 0-1.12-2.75 3.75 3.75 0 0 0-.07-2.77S16.84 6 14 7.92a12.62 12.62 0 0 0-5 0C6.16 6 5.69 5.73 5.69 5.73a3.75 3.75 0 0 0-.07 2.77A4 4 0 0 0 4.5 12.25c0 4 2.4 4.87 4.7 5.12a2.52 2.52 0 0 0-.7 2V22.5"/></svg>
-        </a>
-        <a href="https://pedro-rgz.notion.site/" class="contact-icon-link" target="_blank" rel="noopener noreferrer" aria-label="Notion">
-          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="15" rx="2.5" ry="2.5"/><path d="m9 9 6 6m0-6v6"/></svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>&copy; 2025 Pedro Rodriguez. All rights reserved.</p>
-    </footer>
-  </main>
-
-  <!-- Scripts -->
-  <!-- Note: js/app.js depends on variables defined in js/data.js. Both scripts use 'defer' to defer execution until after HTML parsing, and their document order ensures data.js loads before app.js. -->
-  <script src="js/data.js" defer></script>
-  <script src="js/particles-background.js" defer></script>
-  <script src="js/app.js" defer></script>
+  <!-- Data + Tweaks helpers + app -->
+  <script src="js/editorial-data.js"></script>
+  <script type="text/babel" src="js/editorial-tweaks-panel.jsx"></script>
+  <script type="text/babel" src="js/editorial-app.jsx"></script>
 </body>
 </html>

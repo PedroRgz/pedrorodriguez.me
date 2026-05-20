@@ -943,6 +943,7 @@ footer .wrap {
 .draw-rule.in::after { transform: scaleX(1); }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
   .rw > span { transform: none !important; }

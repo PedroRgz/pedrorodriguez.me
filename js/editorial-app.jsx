@@ -193,7 +193,7 @@ function Nav() {
           </span>
           <span><span className="who">Pedro Rodríguez</span> &nbsp;/&nbsp; <b>Portfolio ’26</b></span>
         </a>
-        <nav className="nav-links" aria-label="Primary">
+        <nav id="primary-navigation" className="nav-links" aria-label="Primary">
           {links.map((l) =>
           <a key={l.id} href={`#${l.id}`}
           className={active === l.id ? "active" : ""}
@@ -205,7 +205,7 @@ function Nav() {
         <a href="#contact" className="nav-cta" onClick={() => setOpen(false)}>
           Get in touch ↗
         </a>
-        <button className="nav-burger" aria-label="Menu" onClick={() => setOpen((o) => !o)}>
+        <button className="nav-burger" aria-label="Menu" aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen((o) => !o)}>
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -335,10 +335,21 @@ function Projects() {
         <ul className="project-list reveal">
           {visible.map((p, i) => {
             const isOpen = openId === p.id;
+            const toggleProject = () => setOpenId(isOpen ? null : p.id);
+            const onProjectKeyDown = (e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleProject();
+              }
+            };
             return (
               <li key={p.id}
               className={`project-row ${isOpen ? "open" : ""}`}
-              onClick={() => setOpenId(isOpen ? null : p.id)}>
+              role="button"
+              tabIndex={0}
+              aria-expanded={isOpen}
+              onClick={toggleProject}
+              onKeyDown={onProjectKeyDown}>
                 <div className="project-head">
                   <span className="project-num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="project-title">{p.title}</span>
@@ -603,25 +614,25 @@ function Footer() {
 function PortfolioTweaks({ t, setTweak }) {
   return (
     <TweaksPanel title="Tweaks">
-      <TweakSection title="Theme">
-        <TweakRadio value={t.theme}
+      <TweakSection label="Theme">
+        <TweakRadio label="Mode" value={t.theme}
         onChange={(v) => setTweak("theme", v)}
         options={[
         { label: "Light", value: "light" },
         { label: "Dark", value: "dark" }]
         } />
       </TweakSection>
-      <TweakSection title="Accent">
-        <TweakColor value={t.accent}
+      <TweakSection label="Accent">
+        <TweakColor label="Accent color" value={t.accent}
         onChange={(v) => setTweak("accent", v)}
         options={ACCENT_OPTIONS} />
       </TweakSection>
-      <TweakSection title="Typography">
-        <TweakSelect value={t.fontPairing}
+      <TweakSection label="Typography">
+        <TweakSelect label="Font pairing" value={t.fontPairing}
         onChange={(v) => setTweak("fontPairing", v)}
         options={Object.entries(FONT_PAIRINGS).map(([k, v]) => ({ value: k, label: v.label }))} />
       </TweakSection>
-      <TweakSection title="Grid overlay">
+      <TweakSection label="Grid overlay">
         <TweakToggle value={t.showGrid}
         onChange={(v) => setTweak("showGrid", v)}
         label="Show 12-col guide" />

@@ -193,7 +193,7 @@ function Nav() {
           </span>
           <span><span className="who">Pedro Rodríguez</span> &nbsp;/&nbsp; <b>Portfolio ’26</b></span>
         </a>
-        <nav id="primary-navigation" className="nav-links" aria-label="Primary">
+        <nav id="primary-navigation" className="nav-links" aria-label="Primary navigation">
           {links.map((l) =>
           <a key={l.id} href={`#${l.id}`}
           className={active === l.id ? "active" : ""}
